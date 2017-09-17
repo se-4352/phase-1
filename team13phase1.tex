@@ -1,0 +1,156 @@
+\documentclass[letter,titlepage,oneside,english]{report}
+\usepackage[margin=1in]{geometry}
+
+\title{
+  Team 13: Phase I\\
+  SE 4352.001
+}
+\author{%
+  Hoang, Kelly\\
+  kkh150130\\[3ex]
+  Mitash, Jacob\\
+  jsm150030
+  \and
+  LaFreniere, Joseph\\
+  jml140230\\[3ex]
+  Mitchell, Daniel\\
+  dxm115030
+}
+\date{2017-09-21}
+
+\usepackage{enumitem}
+% Environment for functional requirements
+\newlist{fr}{enumerate}{10}
+\setlist[fr,1]{label=FR\,\arabic*}
+\setlist[fr]{label*=.\arabic*}
+% Environment for non-functional requirements
+\newlist{nfr}{enumerate}{10}
+\setlist[nfr,1]{label=NFR\,\arabic*}
+\setlist[nfr]{label*=.\arabic*}
+
+% %%%%%%%%
+\begin{document}
+
+\maketitle{}
+
+\begin{fr}
+\item
+  The system shall require that a user have authorization to perform a given task before allowing that user to perform the task.
+  \begin{fr}
+  \item
+    The system shall allow a property's owner to appoint one or more managers to the property.
+  \item
+    The system shall allow a property's owner or manager to create other users and assign those users authorization levels.
+  \item
+    The system shall require that users provide some means of authentication to verify their identities.
+    \begin{fr}
+    \item
+      RFID keycards shall be an accepted means of authentication.
+      \begin{fr}
+      \item
+        Guests shall be permitted to keep a keycard after the expiration of their lease.
+        In such cases the guests' access will have already been revoked pending the signing of a new lease.
+      \end{fr}
+    \item
+      Verified biometrics shall be an accepted means of authentication.
+    \end{fr}
+  \end{fr}
+\item
+  The system shall restrict physical access to the properties to authorized users.
+  \begin{fr}
+  \item
+    The system shall allow a property's owner unrestricted access to the property.
+  \item
+    The system shall allow a property's manager unrestricted access to the property.
+  \item
+    The system shall allow a property's owner or manager to schedule per-door access for other users.
+  \item
+    The system shall allow a property's current lease-holding guest to schedule per-door access for other current guests.
+  \end{fr}
+\item
+  The system shall allow users to automatically control some aspects of a property.
+  \begin{fr}
+  \item\label{customizable}
+    The following aspects shall be customizable:
+    \begin{fr}
+    \item
+      the hue of artificial lighting
+    \item
+      the brightness of artificial lighting
+    \item
+      the window blinds
+    \item
+      the indoor temperature
+    \end{fr}
+  \item\label{devices}
+    The controls shall be accessible from the following classes of devices:
+    \begin{fr}
+    \item
+      smartphone
+    \item
+      laptop
+    \item
+      desktop
+    \item
+      tablet
+    \end{fr}
+  \end{fr}
+\item
+  The system shall allow users to set personal preferences for property configuration.
+  \begin{fr}
+  \item
+    Persistent preferences shall be available for the aspects listed in \ref{customizable}.
+  \item
+    Users shall customize their preference profiles manually.
+  \item
+    The preferences control panel shall be accessible from the devices listed in \ref{devices}.
+  \item
+    A user's preferences shall follow that user to any subsequent properties that have not already had preference profiles manually.
+  \item
+    A property's manager shall determine which aspects of the property other users may set preferences for.
+  \item
+    If multiple users with conflicting preferences are present at a single property at the same time, the used preferences are those of the user whose role is higher in the following list.
+    \begin{enumerate}
+    \item
+      Owner
+    \item
+      Manager
+    \item
+      Lease-holding guest
+    \item
+      Non-lease-holding guest
+    \item
+      Maintenance staff
+    \end{enumerate}
+  \end{fr}
+\item
+  The system shall allow for video and audio observation of properties.
+  \begin{fr}
+  \item
+    Recording shall be motion-activated.
+  \item
+    Recorded data shall be cached onsite.
+  \item
+    Recorded data shall be uploaded offsite as the network permits.
+  \item
+    If recordings were taken at a property while a guest held a lease at that property, viewing of the recordings shall require the permission of the guest given in a legally-binding manner or a court order.
+  \item
+    A property's lease-holding guest shall have viewing access to recordings taken at the property during the time of the guest's lease.
+  \item
+    A lease-holding guest shall be able to disable video or audio recordings of the property they are renting.
+    \begin{fr}
+    \item
+      If a lease-holding guest disables video or audio recording, the date and time at which the recording stops shall be recorded.
+    \item
+      If a lease-holding guest disables video or audio recording, the duration of time during which the recording was disabled shall be recorded.
+    \end{fr}
+  \end{fr}
+\item
+  The system shall provide WLAN access at each property.
+  \begin{fr}
+  \item
+    Connecting a device to a property's WLAN shall require that the device be authenticated by a owner, manager, guest, or staff member of the property.
+  \end{fr}
+\end{fr}
+
+\end{document}
