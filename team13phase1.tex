@@ -134,8 +134,8 @@ This project will assist property owners in remotely managing their properties, 
     A user's preferences shall follow that user to any subsequent properties that have not already had preference profiles manually.
   \item
     A property's manager shall determine which aspects of the property other users may set preferences for.
-  \item
-    If multiple users with conflicting preferences are present at a single property at the same time, the used preferences are those of the user whose role is higher in the following list.
+  \item\label{fr:preferences:order}
+    If multiple users with conflicting preferences are present at a single property at the same time, the applied preferences are those of the user whose role is higher in the following list.
     \begin{enumerate}
     \item
       Owner
@@ -148,6 +148,8 @@ This project will assist property owners in remotely managing their properties, 
     \item
       Maintenance staff
     \end{enumerate}
+  \item
+    If multiple users with conflicting preferences are present at a single property at the same time and those users occupy a single level of \ref{fr:preferences:order}, then the applied preferences are an average of the users' preferences.
   \end{fr}
 \item
   The system shall allow for video and audio observation of properties.
