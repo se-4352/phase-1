@@ -67,11 +67,11 @@
   \item
     The system shall allow a property's current lease-holding guest to schedule per-door access for other current guests.
   \end{fr}
-\item
-  The system shall allow users to automatically control some aspects of a property.
+\item\label{fr:controls}
+  The system shall expose digital controls for certain aspects of its managed properties.
   \begin{fr}
-  \item\label{customizable}
-    The following aspects shall be customizable:
+  \item\label{fr:customizable}
+    The following aspects shall be controllable by lease-holding guests:
     \begin{fr}
     \item
       the hue of artificial lighting
@@ -79,11 +79,29 @@
       the brightness of artificial lighting
     \item
       the window blinds
-    \item
-      the indoor temperature
     \end{fr}
-  \item\label{devices}
-    The controls shall be accessible from the following classes of devices:
+  \item\label{fr:customizable:request}
+    In addition to the property aspects listed in~\ref{fr:customizable}, the system shall allow lease-holding guests to request access to the following aspects:
+    \begin{fr}
+    \item
+      the indoor temperate
+    \item
+      the dish washer
+    \item
+      the stove
+    \item
+      the oven
+    \end{fr}
+  \item\label{fr:customizable:request_approve}
+    The system shall allow a property's owner or manager to approve guests' requests as placed per~\ref{fr:customizable:request}.
+  \end{fr}
+\item\label{fr:software}
+  The system's software components shall be accessible over the Internet.
+  \begin{fr}
+  \item\label{fr:software:ui}
+    The system shall present a graphical user interface (GUI) to its end users.
+  \item\label{fr:software:devices}
+    The system's GUI shall support the following classes of devices:
     \begin{fr}
     \item
       smartphone
@@ -99,11 +117,11 @@
   The system shall allow users to set personal preferences for property configuration.
   \begin{fr}
   \item
-    Persistent preferences shall be available for the aspects listed in \ref{customizable}.
+    Persistent preferences shall be available for the aspects listed in \ref{fr:customizable}.
   \item
     Users shall customize their preference profiles manually.
   \item
-    The preferences control panel shall be accessible from the devices listed in \ref{devices}.
+    The preferences control panel shall be accessible from the devices listed in \ref{fr:software:devices}.
   \item
     A user's preferences shall follow that user to any subsequent properties that have not already had preference profiles manually.
   \item
