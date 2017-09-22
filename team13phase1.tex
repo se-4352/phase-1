@@ -64,6 +64,24 @@ This project will assist property owners in remotely managing their properties, 
     \end{fr}
   \end{fr}
 \item
+  The system shall interact with external, Internet-facing services and devices.
+  \begin{fr}
+  \item\label{fr:external:weather}
+    The system shall incorporate local sensors and data from Internet-based weather services to make weather- and temperature-dependent decisions.
+  \end{fr}
+\item
+  The system shall monitor devices internal to it.
+  \begin{fr}
+  \item
+    The system shall monitor the amount of food in the refrigerator.
+    \begin{fr}
+    \item
+      The system shall be able to determine when the refrigerator is empty.
+    \end{fr}
+  \item\label{fr:internal:smoke_detector}
+    The system shall monitor properties' smoke detectors.
+  \end{fr}
+\item
   The system shall restrict physical access to the properties to authorized users.
   \begin{fr}
   \item
@@ -92,7 +110,7 @@ This project will assist property owners in remotely managing their properties, 
     In addition to the property aspects listed in~\ref{fr:customizable}, the system shall allow lease-holding guests to request access to the following aspects:
     \begin{fr}
     \item
-      the indoor temperate
+      the indoor temperature
     \item
       the dish washer
     \item
@@ -102,24 +120,34 @@ This project will assist property owners in remotely managing their properties, 
     \end{fr}
   \item\label{fr:customizable:request_approve}
     The system shall allow a property's owner or manager to approve guests' requests as placed per~\ref{fr:customizable:request}.
+  \item\label{fr:customizable:multiple_profiles}
+    The system shall allow users to have multiple preference profiles for a single object.
+  \item
+    The system shall allow users to schedule the application of profiles from \ref{fr:customizable:multiple_profiles}.
+  \item
+    The system shall provide physical overrides for automated aspects of the system.
   \end{fr}
 \item\label{fr:software}
   The system's software components shall be accessible over the Internet.
   \begin{fr}
   \item\label{fr:software:ui}
     The system shall present a graphical user interface (GUI) to its end users.
-  \item\label{fr:software:devices}
-    The system's GUI shall support the following classes of devices:
     \begin{fr}
-    \item
-      smartphone
-    \item
-      laptop
-    \item
-      desktop
-    \item
-      tablet
+    \item\label{fr:software:ui:devices}
+      The system's GUI shall support the following classes of devices:
+      \begin{fr}
+      \item
+        smartphone
+      \item
+        laptop
+      \item
+        desktop
+      \item
+        tablet
+      \end{fr}
     \end{fr}
+  \item\label{fr:software:fridge}
+    The system shall allow a property's guests to remotely view the contents of that property's refrigerator.
   \end{fr}
 \item
   The system shall allow users to set personal preferences for property configuration.
@@ -128,14 +156,18 @@ This project will assist property owners in remotely managing their properties, 
     Persistent preferences shall be available for the aspects listed in \ref{fr:customizable}.
   \item
     Users shall customize their preference profiles manually.
+  \item\label{fr:config:control_panel}
+    The system shall provide a digital preferences control panel.
+    \begin{fr}
+    \item\label{fr:config:control_panel:devices}
+      \ref{fr:config:control_panel} shall be accessible from the devices listed in \ref{fr:software:ui:devices}.
+    \end{fr}
   \item
-    The preferences control panel shall be accessible from the devices listed in \ref{fr:software:devices}.
+    The system shall persist the user preferences and maintain them for any subsequent properties that have not already had preference profiles manually set.
   \item
-    A user's preferences shall follow that user to any subsequent properties that have not already had preference profiles manually.
-  \item
-    A property's manager shall determine which aspects of the property other users may set preferences for.
-  \item
-    If multiple users with conflicting preferences are present at a single property at the same time, the used preferences are those of the user whose role is higher in the following list.
+    The system shall allow property owners and managers to determine which aspects of their property guests may set preferences for.
+  \item\label{fr:preferences:order}
+    The system shall apply the user preferences of the user with the highest role (as described in the following list) when there are conflicting preferences.
     \begin{enumerate}
     \item
       Owner
@@ -148,6 +180,8 @@ This project will assist property owners in remotely managing their properties, 
     \item
       Maintenance staff
     \end{enumerate}
+  \item
+    The system shall apply the average of the highest ranking users' preferences when multiple users of the highest role have conflicting preferences.
   \end{fr}
 \item
   The system shall allow for video and audio observation of properties.
@@ -175,7 +209,21 @@ This project will assist property owners in remotely managing their properties, 
   The system shall provide WLAN access at each property.
   \begin{fr}
   \item
-    Connecting a device to a property's WLAN shall require that the device be authenticated by a owner, manager, guest, or staff member of the property.
+    Connecting a device to a property's WLAN shall require that the device be authenticated by an owner, manager, guest, or staff member of the property.
+  \end{fr}
+\item
+  The system shall be capable of sending notifications to user's electronic devices.
+  \begin{fr}
+  \item
+    The devices supported for notification receipt shall include (but not be limited to) the devices listed in \ref{fr:software:ui:devices}.
+  \item
+    The property owner and managers shall be notified if the system detects that one of its devices needs servicing.
+  \item
+    A property's lease-holding guest shall be notified if the system detects that the property's fridge is low on food.
+  \item
+    A property's owner, managers, guests, and maintenance staff shall be notified if the property's smoke detector senses any smoke.
+  \item
+    If data collected in \ref{fr:external:weather} indicates ongoing or imminent severe weather at a property, a notification will be sent to the owner, managers, and guests of that property.
   \end{fr}
 \end{fr}
 
