@@ -156,14 +156,18 @@ This project will assist property owners in remotely managing their properties, 
     Persistent preferences shall be available for the aspects listed in \ref{fr:customizable}.
   \item
     Users shall customize their preference profiles manually.
+  \item\label{fr:config:control_panel}
+    The system shall provide a digital preferences control panel.
+    \begin{fr}
+    \item\label{fr:config:control_panel:devices}
+      \ref{fr:config:control_panel} shall be accessible from the devices listed in \ref{fr:software:ui:devices}.
+    \end{fr}
   \item
-    The preferences control panel shall be accessible from the devices listed in \ref{fr:software:ui:devices}.
+    The system shall persist the user preferences and maintain them for any subsequent properties that have not already had preference profiles manually set.
   \item
-    A user's preferences shall follow that user to any subsequent properties that have not already had preference profiles manually.
-  \item
-    A property's manager shall determine which aspects of the property other users may set preferences for.
+    The system shall allow property owners and managers to determine which aspects of their property guests may set preferences for.
   \item\label{fr:preferences:order}
-    If multiple users with conflicting preferences are present at a single property at the same time, the applied preferences are those of the user whose role is higher in the following list.
+    The system shall apply the user preferences of the user with the highest role (as described in the following list) when there are conflicting preferences.
     \begin{enumerate}
     \item
       Owner
@@ -177,7 +181,7 @@ This project will assist property owners in remotely managing their properties, 
       Maintenance staff
     \end{enumerate}
   \item
-    If multiple users with conflicting preferences are present at a single property at the same time and those users occupy a single level of \ref{fr:preferences:order}, then the applied preferences are an average of the users' preferences.
+    The system shall apply the average of the highest ranking users' preferences when multiple users of the highest role have conflicting preferences.
   \end{fr}
 \item
   The system shall allow for video and audio observation of properties.
