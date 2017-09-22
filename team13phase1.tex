@@ -28,7 +28,7 @@
 \setlist[fr,1]{label=FR\,\arabic*}
 \setlist[fr]{label*=.\arabic*}
 % Environment for non-functional requirements
-\newlist{nfr}{enumerate}{10}
+\newlist{nfr}{enumerate}{100}
 \setlist[nfr,1]{label=NFR\,\arabic*}
 \setlist[nfr]{label*=.\arabic*}
 
@@ -37,10 +37,12 @@
 
 \maketitle{}
 
+\section*{Project Description}
 The goal of this project is to develop a smart home application system that will be used in multiple home properties (henceforth \enquote{properties}) in order to ensure a secure and comfortable living style for the guests.
 This project will provide for greater safety and convenience of property landlords and tenants through surveillance, tracking, and automation of parts of the properties.
 This project will assist property owners in remotely managing their properties, including managing the levels of access each property manager and tenant has in order to establish a successful rental property business.
 
+\section*{Functional Requirements}
 \begin{fr}
 \item
   The system shall require that a user have authorization to perform a given task before allowing that user to perform the task.
@@ -227,6 +229,7 @@ This project will assist property owners in remotely managing their properties, 
   \end{fr}
 \end{fr}
 
+\section*{Non-Functional Requirements}
 \begin{nfr}
 \item
   The system shall maintain a 99.99\% uptime, including network downtime.
